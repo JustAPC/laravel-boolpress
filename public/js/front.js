@@ -2276,11 +2276,10 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("http://127.0.0.1:8000/api/posts").then(function (res) {
-        console.log(res.data.data);
-        var _res$data$posts = res.data.posts,
-            data = _res$data$posts.data,
-            current_page = _res$data$posts.current_page,
-            last_page = _res$data$posts.last_page;
+        var _res$data = res.data,
+            data = _res$data.data,
+            current_page = _res$data.current_page,
+            last_page = _res$data.last_page;
         _this.posts = data;
         _this.pagination = {
           currentPage: current_page,
@@ -20006,7 +20005,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\andre\Desktop\Boolean\PHP\LARAVEL\laravel-api\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Users\andre\Desktop\Boolean\PHP\LARAVEL\laravel-boolpress\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })

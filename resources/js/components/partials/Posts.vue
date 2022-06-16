@@ -83,9 +83,7 @@ export default {
         getPosts() {
             Axios.get("http://127.0.0.1:8000/api/posts")
                 .then((res) => {
-                    console.log(res.data.data);
-
-                    const { data, current_page, last_page } = res.data.posts;
+                    const { data, current_page, last_page } = res.data;
 
                     this.posts = data;
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Models\Post;
 
 class PostController extends Controller
@@ -15,9 +16,14 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::orderBy('updated_at', 'DESC')->with('Categories', 'Tags')->paginate(6);
+        // $currentUser = Auth::user();
+        // $user_id = Auth::user()->id;
 
-        return response()->json(compact('posts'));
+        $posts = Post::orderBy('updated_at', 'DESC')->with('Categories', 'Tags')->paginate(6);
+        // $posts = Post::where('user_id', '=', $user_id)->orderBy('updated_at', 'DESC')->with('Categories', 'Tags')->paginate(6);
+
+        return response()->json($posts);
+        // return response()->json(compact('posts', 'currentUser'));
     }
 
     /**

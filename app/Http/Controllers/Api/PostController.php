@@ -19,7 +19,7 @@ class PostController extends Controller
         // $currentUser = Auth::user();
         // $user_id = Auth::user()->id;
 
-        $posts = Post::orderBy('updated_at', 'DESC')->with('Categories', 'Tags')->paginate(6);
+        $posts = Post::orderBy('updated_at', 'DESC')->with('Categories', 'Tags')->paginate(8);
         // $posts = Post::where('user_id', '=', $user_id)->orderBy('updated_at', 'DESC')->with('Categories', 'Tags')->paginate(6);
 
         return response()->json($posts);
